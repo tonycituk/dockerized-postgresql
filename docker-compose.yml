@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres
+    container_name: dockerized-postgresql-db-server
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres-pass
+  db_mngr:
+    image: adminer
+    restart: always
+    ports:
+      - 3200:8080
